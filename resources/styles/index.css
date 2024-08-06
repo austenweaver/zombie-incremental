@@ -1,0 +1,75 @@
+body {
+	font-family: Monospace, sans-serif;
+	color: white;
+	background-color: #464646;
+}
+
+.header {
+	background-color: #1f1f1f;
+	padding: 20px;
+	text-align: center;
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.content * {
+	display: inline-block;
+}
+
+.game {
+	background-color: #333333;
+	padding: 20px;
+	margin-bottom: 20px;
+	min-width: 300px;
+	margin: 10px 10px;
+	max-width: 300px;
+	text-align: center;
+	padding: 10px;
+}
+
+.game * {
+	display: block;
+}
+
+#map {
+	background-color: #ABABAB;
+	height: 80%;
+	width: auto;
+	margin: 10px auto;
+}
+
+.sidebar {
+	background-color: #1f1f1f;
+	padding: 20px;
+	max-width: 300px;
+	min-width: 300px;
+	margin: 10px 10px;
+}
+
+canvas {
+	background-color: #222222;
+	height: 100%;
+	width: 100%;
+}
+
+.sidebar-content * {
+	display: block;
+}
+
+.resource * {
+	display: inline-block;
+}
+
+.upgrade {
+	background-color: #333333;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#mapName {
+	
+}
