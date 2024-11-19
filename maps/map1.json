@@ -1,0 +1,12 @@
+{
+	"rooms": [
+	{
+		"name": "Room1",
+		"grid": [["empty", "wall"], ["door", "empty"]],
+		"doors": [{"targetRoom": "Room2", "cost": 50, "status": "closed"}]
+    }, {
+		"name": "Room2",
+		"grid": [["empty", "empty"], ["wall", "door"]],
+		"doors": [{"targetRoom": "Room1", "cost": 50, "status": "closed"}]
+    }]
+}
