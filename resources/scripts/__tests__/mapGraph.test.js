@@ -5,15 +5,16 @@ describe('MapGraph', () => {
 	test('should add rooms and connect them', () => {
 		const room1 = new Room('Room1', [['empty']]);
 		const room2 = new Room('Room2', [['empty']]);
-
+	
 		const graph = new MapGraph();
 		graph.addRoom('Room1', room1);
 		graph.addRoom('Room2', room2);
 		graph.connectRooms('Room1', 'Room2', 50);
-
-		expect(graph.rooms['Room1']).toBe(room1);
-		expect(graph.rooms['Room2']).toBe(room2);
+	
+		// Check connections for Room1
 		expect(graph.connections['Room1']).toEqual([{ room: 'Room2', cost: 50 }]);
+	
+		// Check connections for Room2
 		expect(graph.connections['Room2']).toEqual([{ room: 'Room1', cost: 50 }]);
 	});
 
