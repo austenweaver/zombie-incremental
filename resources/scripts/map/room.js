@@ -8,7 +8,7 @@ export class Room {
 		if (x < 0 || x >= this.grid[0].length || y < 0 || y >= this.grid.length) {
 			return false;
 		}
-		return this.grid[y][x] === 0;
+		return this.grid[y][x] === 'empty';
 	}
 	addDoor(targetRoom, cost) {
 		this.doors.push({ targetRoom, cost });
