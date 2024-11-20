@@ -1,12 +1,33 @@
 {
-	"rooms": [
-	{
-		"name": "Room1",
-		"grid": [["empty", "wall"], ["door", "empty"]],
-		"doors": [{"targetRoom": "Room2", "cost": 50, "status": "closed"}]
-    }, {
-		"name": "Room2",
-		"grid": [["empty", "empty"], ["wall", "door"]],
-		"doors": [{"targetRoom": "Room1", "cost": 50, "status": "closed"}]
-    }]
+    "GRID_VALUES": {
+        "EMPTY": "empty",
+        "WALL": "wall",
+        "DOOR": "door"
+    },
+    "rooms": [
+        {
+            "name": "Spawn Room",
+            "grid": [["WALL", "DOOR"], ["DOOR", "EMPTY"]],
+            "doors": [
+                {"targetRoom": "Help Room", "cost": 50, "status": "closed"},
+                {"targetRoom": "Upstairs", "cost": 50, "status": "closed"}
+            ]
+        },
+        {
+            "name": "Help Room",
+            "grid": [["WALL", "DOOR"], ["WALL", "DOOR"]],
+            "doors": [
+                {"targetRoom": "Spawn Room", "cost": 50, "status": "closed"},
+				{"targetRoom": "Upstairs", "cost": 50, "status": "closed"}
+            ]
+        },
+        {
+            "name": "Upstairs",
+            "grid": [["DOOR", "EMPTY"], ["EMPTY", "DOOR"]],
+            "doors": [
+				{"targetRoom": "Help Room", "cost": 50, "status": "closed"},
+                {"targetRoom": "Spawn Room", "cost": 50, "status": "closed"}
+            ]
+        }
+    ]
 }
