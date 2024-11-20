@@ -34,7 +34,21 @@ describe('Room', () => {
 
         expect(room.isWalkable(0, 0)).toBe(true);  // Walkable (empty)
         expect(room.isWalkable(1, 0)).toBe(false); // Not walkable (wall)
-        expect(room.isWalkable(0, 1)).toBe(false); // Not walkable (door)
+        expect(room.isWalkable(0, 1)).toBe(true);  // Walkable (door)
         expect(room.isWalkable(1, 1)).toBe(true);  // Walkable (empty)
+    });
+
+    test('should open and close doors correctly', () => {
+        const grid = [['empty', 'wall'], ['empty', 'empty']];
+        const room = new Room('TestRoom', grid);
+        room.addDoor('Room2', 50, 'closed');
+
+        expect(room.isDoorOpen('Room2')).toBe(false); // Door should be closed initially
+
+        room.openDoor('Room2');
+        expect(room.isDoorOpen('Room2')).toBe(true); // Door should be open
+
+        room.closeDoor('Room2');
+        expect(room.isDoorOpen('Room2')).toBe(false); // Door should be closed again
     });
 });

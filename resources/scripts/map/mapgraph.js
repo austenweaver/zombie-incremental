@@ -62,8 +62,11 @@ export class MapGraph {
 
     loadMap(mapFilePath) {
         const mapData = JSON.parse(fs.readFileSync(mapFilePath, 'utf8'));
+        const gridValues = mapData.GRID_VALUES;
+
         mapData.rooms.forEach(roomData => {
-            const room = new Room(roomData.name, roomData.grid, roomData.doors);
+            const grid = roomData.grid.map(row => row.map(cell => gridValues[cell]));
+            const room = new Room(roomData.name, grid, roomData.doors);
             this.addRoom(roomData.name, room);
         });
         mapData.rooms.forEach(roomData => {
@@ -73,3 +76,7 @@ export class MapGraph {
         });
     }
 }
+
+// Usage example
+const graph = new MapGraph();
+graph.loadMap(path.join(__dirname, 'maps', 'map1.json'));
