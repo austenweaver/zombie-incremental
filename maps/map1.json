@@ -1,4 +1,5 @@
 {
+	"name": "Nacht Der Untoten",
     "GRID_VALUES": {
         "EMPTY": "empty",
         "WALL": "wall",
@@ -7,7 +8,13 @@
     "rooms": [
         {
             "name": "Spawn Room",
-            "grid": [["WALL", "DOOR"], ["DOOR", "EMPTY"]],
+            "grid": [
+				[{ "type": "WALL", "count": 8 }],
+				[{ "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 6 }, { "type": "WALL", "count": 1 }],
+				[{ "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 6 }, { "type": "WALL", "count": 1 }],
+				[{ "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 6 }, { "type": "WALL", "count": 1 }],
+				[{ "type": "WALL", "count": 8 }]
+			],
             "doors": [
                 {"targetRoom": "Help Room", "cost": 50, "status": "closed"},
                 {"targetRoom": "Upstairs", "cost": 50, "status": "closed"}
@@ -15,7 +22,10 @@
         },
         {
             "name": "Help Room",
-            "grid": [["WALL", "DOOR"], ["WALL", "DOOR"]],
+            "grid": [
+				[{ "type": "WALL", "count": 1 }, { "type": "DOOR", "count": 1 }],
+				[{ "type": "WALL", "count": 1 }, { "type": "DOOR", "count": 1 }]
+			],
             "doors": [
                 {"targetRoom": "Spawn Room", "cost": 50, "status": "closed"},
 				{"targetRoom": "Upstairs", "cost": 50, "status": "closed"}
@@ -23,7 +33,10 @@
         },
         {
             "name": "Upstairs",
-            "grid": [["DOOR", "EMPTY"], ["EMPTY", "DOOR"]],
+            "grid": [
+				[{ "type": "DOOR", "count": 1 }, { "type": "EMPTY", "count": 1 }],
+				[{ "type": "EMPTY", "count": 1 }, { "type": "DOOR", "count": 1 }]
+			],
             "doors": [
 				{"targetRoom": "Help Room", "cost": 50, "status": "closed"},
                 {"targetRoom": "Spawn Room", "cost": 50, "status": "closed"}
