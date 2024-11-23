@@ -17,7 +17,7 @@ export class Room {
             return false;
         }
         const cell = this.grid[y][x];
-        return cell === Room.GRID_VALUES.EMPTY || cell === Room.GRID_VALUES.DOOR;
+        return cell === Room.GRID_VALUES.EMPTY;
     }
 
     addDoor(targetRoom, cost, status = 'closed') {
