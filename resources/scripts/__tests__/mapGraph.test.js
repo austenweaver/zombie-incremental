@@ -1,5 +1,5 @@
 import { Room } from '../map/room';
-import { MapGraph } from '../map/mapgraph';
+import { MapGraph } from '../map/mapGraph'; // Corrected directory
 
 describe('MapGraph', () => {
 	test('should add rooms and connect them', () => {
