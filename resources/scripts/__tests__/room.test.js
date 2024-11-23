@@ -30,11 +30,16 @@ describe('Room', () => {
             [Room.GRID_VALUES.EMPTY, Room.GRID_VALUES.WALL],
             [Room.GRID_VALUES.DOOR, Room.GRID_VALUES.EMPTY]
         ];
-        const room = new Room('TestRoom', grid);
+        const walkabilitySettings = {
+            [Room.GRID_VALUES.EMPTY]: true,
+            [Room.GRID_VALUES.WALL]: false,
+            [Room.GRID_VALUES.DOOR]: false // Doors are now unwalkable
+        };
+        const room = new Room('TestRoom', grid, walkabilitySettings);
 
         expect(room.isWalkable(0, 0)).toBe(true);  // Walkable (empty)
         expect(room.isWalkable(1, 0)).toBe(false); // Not walkable (wall)
-        expect(room.isWalkable(0, 1)).toBe(true);  // Walkable (door)
+        expect(room.isWalkable(0, 1)).toBe(false); // Not walkable (door)
         expect(room.isWalkable(1, 1)).toBe(true);  // Walkable (empty)
     });
 
