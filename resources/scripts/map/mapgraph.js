@@ -65,7 +65,14 @@ export class MapGraph {
         const gridValues = mapData.GRID_VALUES;
 
         mapData.rooms.forEach(roomData => {
-            const grid = roomData.grid.map(row => row.map(cell => gridValues[cell]));
+            const grid = roomData.grid.map(row => {
+                return row.flatMap(cell => {
+                    if (typeof cell === 'object' && cell.type && cell.count) {
+                        return Array(cell.count).fill(gridValues[cell.type]);
+                    }
+                    return gridValues[cell];
+                });
+            });
             const room = new Room(roomData.name, grid, roomData.doors);
             this.addRoom(roomData.name, room);
         });
@@ -76,7 +83,3 @@ export class MapGraph {
         });
     }
 }
-
-// Usage example
-const graph = new MapGraph();
-graph.loadMap(path.join(__dirname, 'maps', 'map1.json'));
