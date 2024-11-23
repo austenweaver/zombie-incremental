@@ -1,75 +1,44 @@
 body {
-	font-family: Monospace, sans-serif;
-	color: white;
-	background-color: #464646;
-}
-
-.header {
-	background-color: #1f1f1f;
-	padding: 20px;
+	font-family: Arial, sans-serif;
 	text-align: center;
-}
-
-.content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.content * {
-	display: inline-block;
-}
-
-.game {
-	background-color: #333333;
-	padding: 20px;
-	margin-bottom: 20px;
-	min-width: 300px;
-	margin: 10px 10px;
-	max-width: 300px;
-	text-align: center;
-	padding: 10px;
-}
-
-.game * {
-	display: block;
+	margin: 20px;
 }
 
 #map {
-	background-color: #ABABAB;
-	height: 80%;
-	width: auto;
-	margin: 10px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 100px;
 }
 
-.sidebar {
-	background-color: #1f1f1f;
-	padding: 20px;
-	max-width: 300px;
-	min-width: 300px;
-	margin: 10px 10px;
+.room {
+	display: grid;
+	grid-template-columns: repeat(5, 30px); /* Adjust for room grid size */
+	gap: 2px;
 }
 
-canvas {
-	background-color: #222222;
-	height: 100%;
-	width: 100%;
+.cell {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #ccc;
 }
 
-.sidebar-content * {
-	display: block;
+.cell.empty {
+	background-color: #f0f0f0;
 }
 
-.resource * {
-	display: inline-block;
+.cell.wall {
+	background-color: grey;
 }
 
-.upgrade {
-	background-color: #333333;
-	padding: 10px;
-	margin-bottom: 10px;
+.cell.door {
+	background-color: #ffa500;
 }
 
-#mapName {
-	
+.cell.weapon {
+	background-color: #00f;
+}
+
+.cell.spawn {
+	background-color: #0f0;
 }
