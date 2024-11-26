@@ -46,7 +46,8 @@ export function renderMap(mapData) {
 
 // Fetch and render map1.json when the document loads
 document.addEventListener('DOMContentLoaded', () => {
-	fetch('../../maps/map1.json')
+	const baseUrl = window.location.hostname === 'localhost' ? '' : '/zombie-incremental';
+	fetch('`${baseUrl}/maps/map1.json')
 		.then(response => response.json())
 		.then(mapData => {
 			renderMap(mapData);
