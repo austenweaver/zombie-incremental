@@ -1,13 +1,13 @@
 import { Room } from '../map/room';
 
 describe('Room', () => {
-    test('should create a room with a grid and doors', () => {
+    test('should create a room with a grid and portals', () => {
         const grid = [['empty', 'wall'], ['empty', 'empty']];
         const room = new Room('TestRoom', grid);
 
         expect(room.name).toBe('TestRoom');
         expect(room.grid).toEqual(grid);
-        expect(room.doors).toEqual([]);
+        expect(room.portals).toEqual([]);
     });
 
     test('should correctly identify walkable spaces', () => {
@@ -23,17 +23,22 @@ describe('Room', () => {
         expect(Room.GRID_VALUES.EMPTY).toBe('empty');
         expect(Room.GRID_VALUES.WALL).toBe('wall');
         expect(Room.GRID_VALUES.DOOR).toBe('door');
+        expect(Room.GRID_VALUES.PORTAL).toBe('portal');
+        expect(Room.GRID_VALUES.WINDOW).toBe('window');
     });
 
     test('should correctly identify walkable spaces with GRID_VALUES', () => {
         const grid = [
             [Room.GRID_VALUES.EMPTY, Room.GRID_VALUES.WALL],
-            [Room.GRID_VALUES.DOOR, Room.GRID_VALUES.EMPTY]
+            [Room.GRID_VALUES.DOOR, Room.GRID_VALUES.EMPTY],
+            [Room.GRID_VALUES.WINDOW, Room.GRID_VALUES.PORTAL]
         ];
         const walkabilitySettings = {
             [Room.GRID_VALUES.EMPTY]: true,
             [Room.GRID_VALUES.WALL]: false,
-            [Room.GRID_VALUES.DOOR]: false // Doors are now unwalkable
+            [Room.GRID_VALUES.DOOR]: false,
+            [Room.GRID_VALUES.PORTAL]: false,
+            [Room.GRID_VALUES.WINDOW]: false
         };
         const room = new Room('TestRoom', grid, walkabilitySettings);
 
@@ -41,19 +46,21 @@ describe('Room', () => {
         expect(room.isWalkable(1, 0)).toBe(false); // Not walkable (wall)
         expect(room.isWalkable(0, 1)).toBe(false); // Not walkable (door)
         expect(room.isWalkable(1, 1)).toBe(true);  // Walkable (empty)
+        expect(room.isWalkable(0, 2)).toBe(false); // Not walkable (Window)
+        expect(room.isWalkable(1, 2)).toBe(false);  // Walkable (Portal)
     });
 
-    test('should open and close doors correctly', () => {
+    test('should open and close portals correctly', () => {
         const grid = [['empty', 'wall'], ['empty', 'empty']];
         const room = new Room('TestRoom', grid);
-        room.addDoor('Room2', 50, 'closed');
+        room.addPortal('Room2', 50, 'closed');
 
-        expect(room.isDoorOpen('Room2')).toBe(false); // Door should be closed initially
+        expect(room.isPortalOpen('Room2')).toBe(false); // Portal should be closed initially
 
-        room.openDoor('Room2');
-        expect(room.isDoorOpen('Room2')).toBe(true); // Door should be open
+        room.openPortal('Room2');
+        expect(room.isPortalOpen('Room2')).toBe(true); // Portal should be open
 
-        room.closeDoor('Room2');
-        expect(room.isDoorOpen('Room2')).toBe(false); // Door should be closed again
+        room.closePortal('Room2');
+        expect(room.isPortalOpen('Room2')).toBe(false); // Portal should be closed again
     });
 });

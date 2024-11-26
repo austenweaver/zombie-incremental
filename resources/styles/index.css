@@ -14,13 +14,14 @@ body {
 .room {
 	display: grid;
 	grid-template-columns: repeat(5, 30px); /* Adjust for room grid size */
-	gap: 2px;
+	gap: 0px;
+	
 }
 
 .cell {
 	width: 30px;
 	height: 30px;
-	border: 1px solid #ccc;
+	border: 0px solid #ccc;
 }
 
 .cell.empty {
@@ -35,10 +36,17 @@ body {
 	background-color: #ffa500;
 }
 
+.cell.portal {
+	background-color: lightcoral;
+}
+
 .cell.weapon {
 	background-color: #00f;
 }
 
 .cell.spawn {
 	background-color: #0f0;
+}
+.cell.window {
+	background-color: lightgray;
 }

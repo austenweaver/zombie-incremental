@@ -73,12 +73,12 @@ export class MapGraph {
                     return gridValues[cell];
                 });
             });
-            const room = new Room(roomData.name, grid, roomData.doors);
+            const room = new Room(roomData.name, grid, roomData.portals);
             this.addRoom(roomData.name, room);
         });
         mapData.rooms.forEach(roomData => {
-            roomData.doors.forEach(door => {
-                this.connectRooms(roomData.name, door.targetRoom, door.cost);
+            roomData.portals.forEach(portal => {
+                this.connectRooms(roomData.name, portal.targetRoom, portal.cost);
             });
         });
     }
