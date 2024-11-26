@@ -16,7 +16,6 @@ export function renderMap(mapData) {
 		roomDiv.style.display = 'grid';
 		roomDiv.style.gridTemplateRows = `repeat(${room.grid.length}, min-content)`;
 		roomDiv.style.gridTemplateColumns = `repeat(${room.grid[0].reduce((acc, cell) => acc + (typeof cell === 'object' ? cell.count : 1), 0)}, min-content)`;
-		roomDiv.style.gap = '2px'; // Set a fixed gap between cells
 		room.grid.forEach(row => {
 			row.forEach(cell => {
 				const cellDiv = document.createElement('div');
@@ -27,7 +26,7 @@ export function renderMap(mapData) {
 				cellDiv.style.display = 'flex'; // Align content to center
 				cellDiv.style.alignItems = 'center'; // Align content to center
 				cellDiv.style.justifyContent = 'center'; // Align content to center
-				if (cellType.toLowerCase() === 'wall' || cellType.toLowerCase() === 'door') {
+				if (cellType.toLowerCase() === 'wall' || cellType.toLowerCase() === 'door' || cellType.toLowerCase() === 'portal') {
 					cellDiv.textContent = 'X'; // Add 'X' to unwalkable cells
 				}
 				let count = typeof cell === 'object' ? cell.count : 1;

@@ -3,13 +3,15 @@ export class Room {
         EMPTY: 'empty',
         WALL: 'wall',
         DOOR: 'door',
+        PORTAL: 'portal',
+        WINDOW: 'window'
         // Add more possible values as needed
     };
 
-    constructor(name, grid, doors = []) {
+    constructor(name, grid, portals = []) {
         this.name = name; // Room name	
         this.grid = grid; // Room grid
-        this.doors = doors;	// Room doors
+        this.portals = portals;	// Room portals
     }
 
     isWalkable(x, y) {
@@ -20,26 +22,26 @@ export class Room {
         return cell === Room.GRID_VALUES.EMPTY;
     }
 
-    addDoor(targetRoom, cost, status = 'closed') {
-        this.doors.push({ targetRoom, cost, status });
+    addPortal(targetRoom, cost, status = 'closed') {
+        this.portals.push({ targetRoom, cost, status });
     }
 
-    openDoor(targetRoom) {
-        const door = this.doors.find(door => door.targetRoom === targetRoom);
-        if (door) {
-            door.status = 'open';
+    openPortal(targetRoom) {
+        const portal = this.portals.find(portal => portal.targetRoom === targetRoom);
+        if (portal) {
+            portal.status = 'open';
         }
     }
 
-    closeDoor(targetRoom) {
-        const door = this.doors.find(door => door.targetRoom === targetRoom);
-        if (door) {
-            door.status = 'closed';
+    closePortal(targetRoom) {
+        const portal = this.portals.find(portal => portal.targetRoom === targetRoom);
+        if (portal) {
+            portal.status = 'closed';
         }
     }
 
-    isDoorOpen(targetRoom) {
-        const door = this.doors.find(door => door.targetRoom === targetRoom);
-        return door ? door.status === 'open' : false;
+    isPortalOpen(targetRoom) {
+        const portal = this.portals.find(portal => portal.targetRoom === targetRoom);
+        return portal ? portal.status === 'open' : false;
     }
 }
