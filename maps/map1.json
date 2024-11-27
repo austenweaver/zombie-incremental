@@ -11,14 +11,25 @@
         {
             "name": "Main Floor",
             "grid": [
-				[{ "type": "WALL", "count": 2 }, { "type": "WINDOW", "count": 1 }, { "type": "WALL", "count": 3 }, { "type": "WINDOW", "count": 1 }, { "type": "WALL", "count": 3 }, { "type": "WINDOW", "count": 1 }, { "type": "WALL", "count": 4 }],
-				[{ "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 2 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 1 }, { "type": "PORTAL", "count": 1, "id": 0 }, { "type": "WALL", "count": 1 }],
-				[{ "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 10 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 2 }, { "type": "WALL", "count": 1 }],
-				[{ "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 10 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 2 }, { "type": "WALL", "count": 1 }],
-				[{ "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 2 }, { "type": "EMPTY", "count": 3 }, { "type": "DOOR", "count": 1 }, { "type": "EMPTY", "count": 2 }, { "type": "WALL", "count": 1 }],
-				[{ "type": "WINDOW", "count": 1 }, { "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 1 }, { "type": "PORTAL", "count": 1, "id": 1 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 2 }, { "type": "WALL", "count": 1 }],
-				[{ "type": "WALL", "count": 15 }]
-			],
+                [{ "type": "EMPTY", "count": 24 }],
+                [{ "type": "EMPTY", "count": 24 }],
+                [{ "type": "EMPTY", "count": 24 }],
+				[{ "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 2 }, { "type": "WINDOW", "count": 1 }, { "type": "WALL", "count": 3 }, { "type": "WINDOW", "count": 1 }, { "type": "WALL", "count": 3 }, { "type": "WINDOW", "count": 1 }, { "type": "WALL", "count": 7 }, { "type": "EMPTY", "count": 3 }],
+				[{ "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 2 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1}, { "type": "PORTAL", "count": 1, "id": 0 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+				[{ "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 10 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+				[{ "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 10 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+				[{ "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 2 }, { "type": "EMPTY", "count": 3 }, { "type": "DOOR", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+				[{ "type": "EMPTY", "count": 3 }, { "type": "WINDOW", "count": 1 }, { "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 1 }, { "type": "PORTAL", "count": 1, "id": 1 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+				[{ "type": "EMPTY", "count": 3 }, { "type": "WALL", "count": 12 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+                [{ "type": "EMPTY", "count": 14 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+                [{ "type": "EMPTY", "count": 14 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+                [{ "type": "EMPTY", "count": 14 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+                [{ "type": "EMPTY", "count": 14 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 5 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+                [{ "type": "EMPTY", "count": 14 }, { "type": "WALL", "count": 5 }, { "type": "WINDOW", "count": 1 }, { "type": "WALL", "count": 1 }, { "type": "EMPTY", "count": 3 }],
+                [{ "type": "EMPTY", "count": 24 }],
+                [{ "type": "EMPTY", "count": 24 }],
+                [{ "type": "EMPTY", "count": 24 }]
+            ],
             "portals": [
                 {"targetRoom": "Upstairs", "cost": 750, "status": "closed"},
                 {"targetRoom": "Upstairs", "cost": 750, "status": "closed"}
