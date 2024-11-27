@@ -21,11 +21,6 @@ export function renderMap(mapData) {
 				const cellDiv = document.createElement('div');
 				let cellType = typeof cell === 'string' ? cell : cell.type;
 				cellDiv.className = `cell ${cellType.toLowerCase()}`; // Ensure class is in lowercase
-				cellDiv.style.width = '1.5vw'; // Set a fixed width for cells
-				cellDiv.style.height = '1.5vw'; // Set a fixed height for cells
-				cellDiv.style.display = 'flex'; // Align content to center
-				cellDiv.style.alignItems = 'center'; // Align content to center
-				cellDiv.style.justifyContent = 'center'; // Align content to center
 				console.log(cellType.toLowerCase())
 				if (cellType.toLowerCase() === 'wall' || cellType.toLowerCase() === 'door' || cellType.toLowerCase() === 'portal') {
 					cellDiv.textContent = 'X'; // Add 'X' to unwalkable cells
@@ -42,20 +37,5 @@ export function renderMap(mapData) {
 		mapContainer.appendChild(roomDiv);
 	}
 }
-
-
-// Fetch and render map1.json when the document loads
-document.addEventListener('DOMContentLoaded', () => {
-	const baseUrl = window.location.hostname === '127.0.0.1' ? '' : '/zombie-incremental';
-	fetch(`${baseUrl}/maps/map1.json`)
-		.then(response => response.json())
-		.then(mapData => {
-			renderMap(mapData);
-		})
-		.catch(error => {
-			console.error('Error loading map1.json:', error);
-			});
-});
-
 
 
