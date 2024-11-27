@@ -13,14 +13,13 @@ body {
 
 .room {
 	display: grid;
-	grid-template-columns: repeat(5, 30px); /* Adjust for room grid size */
 	gap: 0px;
 	
 }
 
 .cell {
-	width: 30px;
-	height: 30px;
+	width: 5px;
+	height: 5px;
 	border: 0px solid #ccc;
 }
 
