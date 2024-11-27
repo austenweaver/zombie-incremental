@@ -1,0 +1,28 @@
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 20px;
+}
+
+body * {
+	box-sizing: border-box;
+	width: 45%;
+	height: 80%;
+}
+
+#editorContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
+#editorMapContainer, #editorJson {
+	width: 45%;
+	height: 80%;
+}
+
+#editorMapGrid {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	gap: 1px;
+}
