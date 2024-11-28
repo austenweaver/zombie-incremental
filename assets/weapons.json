@@ -1,0 +1,47 @@
+{
+	"weapons": [
+		{
+			"id": 1,
+			"name": "Colt M1911",
+			"type": "pistol",
+			"magazineSize": 8,
+			"ammo": 80,
+			"fireRate": 800,
+			"reloadTime": 2.65,
+			"damage": 20,
+			"damageType": "bullet",
+			"range": 8,
+			"price": 100
+		},
+		{
+			"id": 2,
+			"name": "Kar98k",
+			"type": "rifle",
+			"magazineSize": 5,
+			"ammo": 50,
+			"fireRate": 48,
+			"reloadTime": 2.5,
+			"damage": 100,
+			"damageType": "bullet",
+			"range": 16,
+			"price": 200
+		},
+		{
+			"id": 3,
+			"name": "M1A1 Carbine",
+			"type": "rifle",
+			"magazineSize": 15,
+			"ammo": 150,
+			"fireRate": 60,
+			"reloadTime": 2.5,
+			"damage": 20,
+			"damageType": "bullet",
+			"range": 16,
+			"price": 600
+		}
+	]
+
+
+
+
+}
